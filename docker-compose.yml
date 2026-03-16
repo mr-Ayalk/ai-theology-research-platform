@@ -1,0 +1,25 @@
+services:
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: theology
+      POSTGRES_PASSWORD: theology
+      POSTGRES_DB: theology_db
+    ports:
+      - "5432:5432"
+
+  api:
+    build: ./apps/api
+    ports:
+      - "4000:4000"
+
+  ai-service:
+    build: ./apps/ai-service
+    ports:
+      - "8000:8000"
+
+  web:
+    build: ./apps/web
+    ports:
+      - "3000:3000"
