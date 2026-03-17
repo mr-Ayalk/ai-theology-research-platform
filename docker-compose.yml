@@ -2,6 +2,7 @@ services:
 
   postgres:
     image: postgres:15
+    container_name: theology_postgres
     environment:
       POSTGRES_USER: theology
       POSTGRES_PASSWORD: theology
